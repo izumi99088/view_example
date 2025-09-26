@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuperMarket Pro - Calidad y Frescura</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2e7d32;
+            --secondary-color: #4caf50;
+            --accent-color: #ff9800;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url('https://images.unsplash.com/photo-1564759298148-cefadf87ffb4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 120px 0;
+            color: white;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+        
+        .value-card {
+            transition: transform 0.3s;
+            border: none;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            height: 100%;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .value-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .about-img {
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .feature-box {
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 10px;
+            background-color: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            height: 100%;
+            transition: all 0.3s;
+        }
+        
+        .feature-box:hover {
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .testimonial-card {
+            border-left: 4px solid var(--accent-color);
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .contact-info {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .contact-info li {
+            margin-bottom: 10px;
+        }
+        
+        .contact-info i {
+            color: var(--primary-color);
+            margin-right: 10px;
+            width: 20px;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+        }
+        
+        .social-icons a {
+            color: white;
+            font-size: 1.2rem;
+            margin-right: 15px;
+            transition: color 0.3s;
+        }
+        
+        .social-icons a:hover {
+            color: var(--accent-color);
+        }
+        
+        .btn-primary-custom {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            padding: 10px 25px;
+            font-weight: 600;
+        }
+        
+        .btn-primary-custom:hover {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+        
+        .brand-highlight {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="./correcion1.png" alt="logo" height="70">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#values">Valores</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold mb-4">Bienvenidos a <span class="text-warning">Casa Del Ahorro</span></h1>
+                    <p class="lead mb-4">Tu segunda casa en el barrio</p>
+                    <p class="mb-5">Desde 2020 sirviendo a nuestra comunidad con los mejores productos y el servicio más amable.</p>
+                    <a href="#about" class="btn btn-warning btn-lg px-4 py-2 fw-bold">Conoce más sobre nosotros</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Nosotros -->
+    <section id="about" class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="section-title">Nuestra Historia</h2>
+                    <p class="lead">Más de 4 años siendo parte de tu vida</p>
+                    <p>Fundado en 2020, Casa Del Ahorro nació con la visión de ofrecer a nuestras familias y vecinos un lugar donde encontrar productos de la más alta calidad a precios justos. Lo que comenzó como una pequeña tienda familiar ha crecido hasta convertirse en un referente de confianza en nuestra comunidad.</p>
+                    <p>Hoy, seguimos manteniendo los mismos valores que nos inspiraron desde el primer día: compromiso con la calidad, trato cercano con nuestros clientes y apoyo a productores locales.</p>
+                    <a href="#contact" class="btn btn-primary-custom mt-3">Visítanos hoy</a>
+                </div>
+                <div class="col-lg-6">
+                    <img src="./casadelahorro.jpg" alt="Nuestro supermercado" class="img-fluid about-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nuestros Valores -->
+    <section id="values" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="section-title d-inline-block">Nuestros Valores</h2>
+                    <p class="lead mt-3">Los principios que guían cada aspecto de nuestro negocio</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="value-card p-4 text-center rounded">
+                        <i class="fas fa-leaf value-icon"></i>
+                        <h4>Calidad Garantizada</h4>
+                        <p>Seleccionamos cuidadosamente cada producto para asegurar frescura y excelencia en todo lo que ofrecemos.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="value-card p-4 text-center rounded">
+                        <i class="fas fa-heart value-icon"></i>
+                        <h4>Compromiso con la Comunidad</h4>
+                        <p>Apoyamos a productores locales y participamos activamente en iniciativas que benefician a nuestro entorno.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="value-card p-4 text-center rounded">
+                        <i class="fas fa-users value-icon"></i>
+                        <h4>Atención Personalizada</h4>
+                        <p>Nuestro equipo está capacitado para ofrecerte una experiencia de compra cálida y asistida.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios y Características -->
+    <section id="services" class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="section-title d-inline-block">Nuestras Características</h2>
+                    <p class="lead mt-3">Lo que nos hace diferentes</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="feature-box">
+                        <i class="fas fa-store feature-icon"></i>
+                        <h4>LOCAL ACCESIBLE Y ACOGEDOR</h4>
+                        <p>Nuestro local está diseñado para que encuentres todo fácilmente, con pasillos amplios y organización que facilita tu compra rápida y cómoda.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-box">
+                        <i class="fas fa-seedling feature-icon"></i>
+                        <h4>PRODUCTOS BÁSICOS DE CALIDAD</h4>
+                        <p>Tenemos todo lo esencial para tu hogar: abarrotes, lácteos, carnes frías y productos de limpieza, siempre con la calidad que tu familia merece.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-box">
+                        <i class="fas fa-carrot feature-icon"></i>
+                        <h4>Productos Locales</h4>
+                        <p>Más del 40% de nuestros productos provienen de productores locales, apoyando la economía de nuestra región.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-4 mb-4">
+                    <div class="feature-box">
+                        <i class="fas fa-paw feature-icon"></i>
+                        <h4>Sección de Mascotas</h4>
+                        <p>Incluimos a tus mascotas en nuestra familia con alimentos y accesorios básicos para su bienestar.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-box">
+                        <i class="fas fa-wine-bottle feature-icon"></i>
+                        <h4>PRODUCTOS ESENCIALES DE CALIDAD</h4>
+                        <p>Ofrecemos una selección cuidadosa de productos básicos de hogar, siempre con las mejores marcas y precios.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-box">
+                        <i class="fas fa-bread-slice feature-icon"></i>
+                        <h4>HORARIOS FLEXIBLES</h4>
+                        <p>Estamos abiertos cuando nos necesites, con horarios que se adaptan a tu rutina familiar.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios -->
+    
+    <!-- Contacto -->
+    <section id="contact" class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="section-title d-inline-block">Visítanos</h2>
+                    <p class="lead mt-3">Estamos aquí para servirte</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <h4 class="mb-4">Información de Contacto</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> Av. Principal 123, Centro, Ciudad</li>
+                        <li><i class="fas fa-phone"></i> (123) 456-7890</li>
+                        <li><i class="fas fa-envelope"></i> info@supermarketpro.com</li>
+                        <li><i class="fas fa-clock"></i> Lunes a Sábado: 8:00 AM - 10:00 PM</li>
+                        <li><i class="fas fa-clock"></i> Domingos: 9:00 AM - 9:00 PM</li>
+                    </ul>
+                    <div class="mt-4">
+                        <h5>Síguenos en redes sociales</h5>
+                        <div class="social-icons mt-3">
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="bg-white p-4 rounded shadow-sm">
+                        <h4 class="mb-4">Envíanos un mensaje</h4>
+                        <form>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="Tu nombre" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="email" class="form-control" placeholder="Tu correo electrónico" required>
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="form-control" rows="4" placeholder="Tu mensaje" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary-custom">Enviar mensaje</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <h5><i class="fas fa-shopping-basket me-2"></i> SuperMarket Pro</h5>
+                    <p>Tu supermercado de confianza desde 1995. Calidad, frescura y servicio excepcional.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">&copy; 2023 SuperMarket Pro. Todos los derechos reservados.</p>
+                    <p class="mb-0">Diseñado con <i class="fas fa-heart text-danger"></i> para nuestra comunidad</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
